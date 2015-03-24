@@ -1,0 +1,30 @@
+body{
+	background: blue;
+}
+.bg{
+	width:500px;
+	height:340px;
+	background-image:url('1.png');
+	position:absolute;left:25%;bottom:50%;
+}
+
+#m{
+	width:40px;
+	height:30px;
+	background-image:url('move.png');
+	background-position:0% 0%;
+	position:absolute;bottom:26%;
+	left:30px;
+}
+.tb{
+	width:100px;
+	height:101px;
+	border-color:red;
+	border:12px;
+	background-color: yellow;
+	position: absolute;bottom:-110px;left:0px;right:0px;
+}
+button{
+	width:30px;
+	height:30px;
+}

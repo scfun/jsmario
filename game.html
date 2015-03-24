@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<script tpye="text/javascript" src="test.js"></script> 
+		<link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+		<script type="text/javascript">
+			function mymove(num){
+				var person = new Person();
+			   	switch(num){
+			   		case 0:
+			   			var m = document.getElementById('m'); 
+						style = window.getComputedStyle(m),
+					    left = style.getPropertyValue('left');
+					   	img =  style.getPropertyValue('background-position');
+					   	url = style.getPropertyValue('background-image');
+			   			var res = person.move(0,left,img,url);
+			   			m.style.backgroundPosition = res[1];
+			   			m.style.left = res[0];
+			   			m.style.backgroundImage = res[2];
+			   		break;
+			   		case 1:
+			   			var img =null;
+			   			var m = document.getElementById('m');
+			   			style = window.getComputedStyle(m),
+			   			left = style.getPropertyValue('left');
+			   			img =  style.getPropertyValue('background-position');
+			   			url = style.getPropertyValue('background-image');
+			   			var res = person.move(1,left,img,url);
+			   			//alert(res[2]);
+			   			m.style.left  = res[0];
+			   			m.style.backgroundPosition = res[1];
+			   			m.style.backgroundImage = res[2];
+			   		break;
+			   		case 2:
+			   			m.style.left = person.move(2,left);
+			   		break;
+			   		case 3:
+			   			m.style.left = person.move(3,left);
+			   		break;
+			   	}
+			}
+		</script>
+	<body>
+		<div class="bg">
+			<div class ="bg" id="m">
+			</div>
+				<table class="tb">
+					<tr>
+						<td colspan="2"></td>
+						<td><button>上</button></td>
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<td><button onclick="mymove(1)">左</button></td>
+						<td colspan="4"></td>
+						<td ><button onclick="mymove(0)">右</button></td>
+					</tr>
+					<tr>
+						<td colspan="2"></td>
+						<td><button>下</button></td>
+						<td colspan="2"></td>
+					</tr>
+				</table>
+		</div>
+	</body>
+</html>
